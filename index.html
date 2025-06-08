@@ -195,8 +195,10 @@
   document.addEventListener("DOMContentLoaded", function () {
     const toggleButton = document.getElementById("theme-toggle");
 
-    // Set initial mode from localStorage
-    if (localStorage.getItem("theme") === "dark") {
+    // Default to dark mode if no theme is set
+    const currentTheme = localStorage.getItem("theme") || "dark";
+
+    if (currentTheme === "dark") {
       document.body.classList.add("dark-mode");
       toggleButton.textContent = "☀️ Light Mode";
     } else {
@@ -216,6 +218,7 @@
     });
   });
 </script>
+
 
 </body>
 
