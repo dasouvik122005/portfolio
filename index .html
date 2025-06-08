@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Souvik Dev</title>
+    <link rel="icon" type="image/png" href="souvik.jpg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"
+        defer></script>
+</head>
+
+<body>
+  <!-- Navbar -->
+<style>
+  body {
+    background-color: #ffffff;
+    color: #000;
+    font-family: 'Segoe UI', sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+    background-color: #e4f0f7;
+    border-radius: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    padding: 0.25rem 0.5rem;
+    margin: 1.5rem auto 0 auto;
+    min-height: 40px;
+    max-width: 900px;
+    transition: background-color 0.3s;
+  }
+
+  @media (max-width: 991.98px) {
+    .navbar {
+      border-radius: 1rem;
+      padding: 0.25rem 0.25rem;
+      margin: 0.5rem 0.5rem 0 0.5rem;
+      max-width: 100%;
+    }
+  }
+
+  /* Dark mode styles */
+  body.dark-mode {
+    background-color: #121212;
+    color: #f1f1f1;
+  }
+
+  body.dark-mode .navbar {
+    background-color: #1f1f1f !important;
+  }
+
+  body.dark-mode .nav-link,
+  body.dark-mode .navbar-brand {
+    color: #ffffff !important;
+  }
+
+  .theme-toggle-btn {
+    border: 1px solid #888;
+    border-radius: 999px;
+    padding: 0.25rem 1rem;
+    font-size: 0.9rem;
+    background-color: transparent;
+    color: #000;
+  }
+
+  body.dark-mode .theme-toggle-btn {
+    color: #fff;
+    border-color: #ccc;
+  }
+
+  body.dark-mode,
+  body.dark-mode h1,
+  body.dark-mode h2,
+  body.dark-mode h3,
+  body.dark-mode h4,
+  body.dark-mode h5,
+  body.dark-mode h6,
+  body.dark-mode p,
+  body.dark-mode span,
+  body.dark-mode a,
+  body.dark-mode li,
+  body.dark-mode label,
+  body.dark-mode .card-text,
+  body.dark-mode .timeline-content,
+  body.dark-mode .timeline-content h4,
+  body.dark-mode .timeline-content h5,
+  body.dark-mode .timeline-content p,
+  body.dark-mode .text-secondary,
+  body.dark-mode .form-label,
+  body.dark-mode .form-text {
+    color: #fff !important;
+  }
+
+  body.dark-mode .card,
+  body.dark-mode .navbar,
+  body.dark-mode .timeline-container,
+  body.dark-mode .footer-main,
+  body.dark-mode .border {
+    /* Remove background color for transparency */
+    background-color: transparent !important;
+    color: #fff !important;
+    border-color: #444 !important;
+    /* Add blur effect */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+
+  body.dark-mode input,
+  body.dark-mode textarea {
+    background-color: #181818 !important;
+    color: #fff !important;
+    border-color: #444 !important;
+  }
+
+  body.dark-mode .btn-success {
+    background-color: #388e3c !important;
+    border-color: #388e3c !important;
+    color: #fff !important;
+  }
+
+  /* Change placeholder text color in dark mode */
+  body.dark-mode input::placeholder,
+  body.dark-mode textarea::placeholder {
+    color: #bbbbbb !important;
+    opacity: 1 !important;
+  }
+
+  /* Change the Bootstrap navbar toggler (hamburger) icon color to white in dark mode */
+  body.dark-mode .navbar-toggler {
+    border-color: #fff !important;
+  }
+  body.dark-mode .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255,255,255,1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  }
+
+  .navbar-toggler {
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  body.dark-mode .navbar-toggler {
+    border: none !important;
+    box-shadow: none !important;
+  }
+</style>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg sticky-top bg-white">
+    <div class="container">
+      <a class="navbar-brand" href="#">Souvik Dev</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto d-flex align-items-center gap-3">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#education">Education</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#projects">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+          <li class="nav-item">
+            <button id="theme-toggle" class="theme-toggle-btn">🌙 Dark Mode</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- Bootstrap JS CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Dark Mode Toggle Script -->
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggleButton = document.getElementById("theme-toggle");
+
+    // Set initial mode from localStorage
+    if (localStorage.getItem("theme") === "dark") {
+      document.body.classList.add("dark-mode");
+      toggleButton.textContent = "☀️ Light Mode";
+    } else {
+      document.body.classList.remove("dark-mode");
+      toggleButton.textContent = "🌙 Dark Mode";
+    }
+
+    toggleButton.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+      if (document.body.classList.contains("dark-mode")) {
+        toggleButton.textContent = "☀️ Light Mode";
+        localStorage.setItem("theme", "dark");
+      } else {
+        toggleButton.textContent = "🌙 Dark Mode";
+        localStorage.setItem("theme", "light");
+      }
+    });
+  });
+</script>
+
+</body>
+
+    
+
+    <!-- Body -->
+
+    <div class="container pb-5" style="margin-top: 100px;">
+      <div class="row align-items-center flex-column flex-lg-row g-5">
+        <!-- Left section with image and social media -->
+        <div class="col-12 col-lg-auto d-flex flex-column align-items-center">
+          <img src="souvik.jpg" class="border rounded-circle hero-img" alt="hero-img" height="200" style="max-width: 80vw;">
+        </div>
+
+        <!-- Right section with text -->
+        <div class="col text-center text-lg-start">
+          <h1 class="mb-3 d-block animate-typing">Hi, I'm Souvik Das 👾</h1>
+          <style>
+            @keyframes typing {
+              from { width: 0 }
+              to { width: 100% }
+            }
+            .animate-typing {
+              overflow: hidden;
+              white-space: nowrap;
+              width: 0;
+              animation: typing 3s steps(20, end) forwards;
+              font-size: 2.2rem;
+            }
+            @media (max-width: 576px) {
+              .animate-typing {
+                font-size: 1.5rem;
+              }
+            }
+          </style>
+          <span class="fs-5 text-secondary d-block">I am a front-end Web Developer.</span>
+          <span class="fs-5 text-secondary d-block">I will help you to build your next project in a short time.</span>
+          <span class="fs-5 text-secondary d-block">Let's make your project stand out from others.</span>
+          <div class="d-flex justify-content-center justify-content-lg-start gap-3 mt-3">
+            <a href="souvik_das_resume.pdf" target="_blank">
+              <button class="btn btn-success shadow rounded mt-2">View Resume</button>
+            </a>
+          </div>
+        </div>
+      </div>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
+      <script>
+        VanillaTilt.init(document.querySelector(".hero-img"), {
+          max: 20,
+          speed: 400,
+          glare: true,
+          "max-glare": 0.2,
+          scale: 1.12,
+          transition: true, // enables smooth transitions
+          easing: "cubic-bezier(.03,.98,.52,.99)" // smooth zoom easing
+        });
+        VanillaTilt.init(document.querySelectorAll(".tilt-btn"), {
+          max: 15,
+          speed: 400,
+          glare: true,
+          "max-glare": 0.2,
+          scale: 1.08,
+          transition: true,
+          easing: "cubic-bezier(.03,.98,.52,.99)"
+        });
+            // Add stronger light shadow behind the profile picture
+            document.querySelector(".hero-img").style.boxShadow = "0 24px 64px 0 rgba(80, 180, 255, 0.45)";
+      </script>
+    </div>
+
+
+
+
+    <!-- Gyan Section -->
+
+    <section class="container mt-4">
+        <h4 class="text-center">Skills speak louder than certificates.</h4>
+        <p class="text-secondary text-center">Skills that I have obtained through my journey of programming.</p>
+
+        <div class="card p-5 mt-3 shadow">
+            <p class="mb-2 text-center fs-5"><b>🛠 Tech Stack/ Certifications</b></p>
+            <div class="d-flex gap-1 justify-content-center flex-wrap">
+                
+                <img src="https://img.shields.io/badge/-C-00599C?logo=c&logoColor=white&style=flat"
+                    height="30">&nbsp;
+                <img src="https://img.shields.io/badge/-HTML5-DE5934?logo=HTML5&logoColor=white&style=flat"
+                    height="30">&nbsp;
+                <img src="https://img.shields.io/badge/-CSS3-2275B2?logo=CSS3&logoColor=white&style=flat" 
+                    height="30">&nbsp;
+                <img src="https://img.shields.io/badge/-JavaScript-F7DF1E?logo=javascript&logoColor=black&style=flat"
+                    height="30">&nbsp;
+                    <img src="https://img.shields.io/badge/-Git-orange?logo=Git&logoColor=white&style=flat"
+                    height="30">&nbsp;
+                <img src="https://img.shields.io/badge/-GitHub-181717?logo=github&logoColor=white&style=flat"
+                    height="30">&nbsp;
+                <img src="https://img.shields.io/badge/-Visual%20Studio%20Code-25AEF4?logo=visualstudio&logoColor=white&style=flat"
+                    height="30">&nbsp;
+                <img src="https://img.shields.io/badge/-Windows-0F7BCF?logo=Windows&logoColor=white&style=flat"
+                    height="30">&nbsp;
+
+            </div><br>
+
+
+            <p class="mb-2 text-center fs-5"><b>⏰ GitHub Activity</b></p>
+            <div class="d-flex gap-1 justify-content-center flex-wrap">
+
+              
+
+              <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=dasouvik122005&theme=aura&hide_border=false&include_all_commits=false&count_private=false&layout=compact&bg_color=00000000"
+                alt="github-stats" height="200" style="max-width: 100%; min-width: 220px;">
+              <img src="https://github-readme-stats.vercel.app/api?username=dasouvik122005&theme=default&hide_border=false&include_all_commits=false&count_private=false&bg_color=00000000&text_color=2F4F4F"
+                alt="github-most-used-languages" height="200" style="max-width: 100%; min-width: 220px;">
+            </div>
+
+    </section>
+
+
+    <section class="container my-5" id="projects">
+  <h4 class="text-center fw-bold mb-1" data-aos="fade-up">🚀 The Projects I Have Built</h4>
+  <p class="text-secondary text-center mb-4" data-aos="fade-up" data-aos-delay="150">
+    These are some close-to-heart projects. See more on
+    <a href="https://github.com/dasouvik122005" class="fw-semibold text-dark text-decoration-none" target="_blank">
+      GitHub
+    </a>.
+  </p>
+
+  <div class="row g-4 justify-content-center">
+    <!-- Project Card 1 -->
+    <div class="col-md-6 col-lg-3" data-aos="zoom-in">
+      <div class="card shadow-sm border-0 rounded-4 h-100 project-card">
+        <div class="overflow-hidden rounded-top-4">
+          <a href="https://dasouvik122005.github.io/Smart_Attendance_Tracker/login.html" target="_blank">
+            <img src="smart_att_tracker.png" class="card-img-top img-hover" alt="Smart Attendance Tracker">
+          </a>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Smart Attendance Tracker</h5>
+          <p class="card-text text-secondary small">An application to track student attendance.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project Card 2 -->
+    <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
+      <div class="card shadow-sm border-0 rounded-4 h-100 project-card">
+        <div class="overflow-hidden rounded-top-4">
+          <a href="https://dasouvik122005.github.io/Notes_Nexus/" target="_blank">
+            <img src="notes_nexus.png" class="card-img-top img-hover" alt="Notes Nexus">
+          </a>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Notes Nexus</h5>
+          <p class="card-text text-secondary small">A note-taking application for students.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project Card 3 -->
+    <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="200">
+      <div class="card shadow-sm border-0 rounded-4 h-100 project-card">
+        <div class="overflow-hidden rounded-top-4">
+          <a href="https://dasouvik122005.github.io/To-do-list/" target="_blank">
+            <img src="to_do_list.png" class="card-img-top img-hover" alt="To-do List">
+          </a>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">To-do List</h5>
+          <p class="card-text text-secondary small">A simple to-do list application.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Uncomment and Duplicate for More Projects -->
+    
+    <!-- <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="300">
+      <div class="card shadow-sm border-0 rounded-4 h-100 project-card">
+        <div class="overflow-hidden rounded-top-4">
+          <img src="souvik.png" class="card-img-top img-hover" alt="Weatherly">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Weather.ly</h5>
+          <p class="card-text text-secondary small">A weather app using real-time API data.</p>
+        </div>
+      </div>
+    </div> -->
+   
+  </div>
+</section>
+
+
+<!-- Style: Hover & Image Zoom -->
+<style>
+  .img-hover {
+    transition: transform 0.5s ease;
+  }
+
+  .img-hover:hover {
+    transform: scale(1.05);
+  }
+
+  .card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+</style>
+
+
+
+    <section class="container mt-4">
+                <h4 id="education" class="text-center" style="color: #000;"><b>📘 My Educational Journey</b></h4>
+
+            <!-- Timeline CSS moved to <style> in <head> -->
+          </section>
+          <style>
+            /* body {
+              margin: 0;
+              font-family: 'Segoe UI', sans-serif;
+              background-color: #ffffff;
+              color: white;
+            } */
+        
+            .timeline-container {
+              position: relative;
+              padding: 50px 20px;
+              max-width: 800px;
+              margin: auto;
+            }
+        
+            .timeline-container::before {
+              content: "";
+              position: absolute;
+              top: 0;
+              left: 40px;
+              bottom: 0;
+              width: 2px;
+              background: #888;
+            }
+        
+            .timeline-item {
+              display: flex;
+              align-items: flex-start;
+              margin-bottom: 40px;
+              position: relative;
+            }
+        
+            .timeline-icon {
+              background-color: #fff;
+              border-radius: 50%;
+              padding: 5px;
+              width: 40px;
+              height: 40px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              margin-right: 20px;
+              z-index: 1;
+            }
+        
+            .timeline-content {
+              padding-left: 20px;
+            }
+        
+            .timeline-content h4 {
+              margin: 0;
+              font-size: 1.1rem;
+              color: #000000;
+            }
+        
+            .timeline-content p {
+              margin: 5px 0;
+              font-size: 0.95rem;
+              color: #000000;
+            }
+        
+            .timeline-date {
+              font-size: 0.9rem;
+              color: #070000;
+            }
+        
+            .grid-bg {
+              background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+                                linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+              background-size: 20px 20px;
+            }
+        
+            @media (max-width: 30px) {
+              .timeline-container::before {
+                left: 20px;
+              }
+          
+              .timeline-item {
+                flex-direction: column;
+                align-items: flex-start;
+              }
+          
+              .timeline-icon {
+                margin-bottom: 10px;
+              }
+          
+              .timeline-content {
+                padding-left: 0;
+              }
+            }
+          </style>
+        </head>
+        <body class="grid-bg">
+          <div class="timeline-container">
+            <!-- <h1 style="font-size: 3rem; margin-bottom: 40px;">Experience</h1> -->
+        
+            <!-- Timeline Item 1 -->
+            <div class="timeline-item">
+              <div class="timeline-icon">
+                <img src="jisulogo.png" width="30" alt="JIS Logo">
+              </div>
+              <div class="timeline-content">
+                <div class="timeline-date"></div>
+                    <h5>JIS University, Kolkata</h5>
+                    <p><strong>B.Tech in CSE</strong></p>
+                    <p>📅 Duration: 2024 – 2028</p>
+                    <p>📘 Semester: 2nd</p>
+                    <p>🎯 SGPA: 9.43</p>
+              </div>
+            </div>
+        
+            <!-- Timeline Item 2 -->
+            <div class="timeline-item">
+              <div class="timeline-icon">
+                <img src="bbvlogo.jpg" width="30" alt="GDSC Logo">
+              </div>
+              <div class="timeline-content">
+                <div class="timeline-date"></div>
+                <h5>Bankura Banga Vidyalaya</h5>
+                <p><strong>Class 12 (WBCHSE)</strong></p>
+                <p>📅 Year: 2024</p>
+                <p>🎯 Grade: 91.2%</p>
+                <p>📚 Stream: Science</p>
+              </div>
+            </div>
+        
+            <!-- Timeline Item 3 -->
+            <div class="timeline-item">
+              <div class="timeline-icon">
+                <img src="fhslogo.jpg" width="30" alt="Company Logo">
+              </div>
+              <div class="timeline-content">
+                <div class="timeline-date"></div>
+                <h4><strong></strong></h4>
+                <h5></strong>Fulkushma High School</strong></h5>
+                <p><strong>Class 10 (WBBSE)</strong></p>
+                <p>📅 Year: 2022</p>
+                <p>🎯 Grade: 92.57%</p>
+              </div>
+            </div>
+        
+          </div>
+        </body>
+
+        
+    <section class="container mt-5">
+  <h4 class="text-center fw-bold mb-1">Course, Internship & Workshops</h4>
+  <p class="text-secondary text-center mb-4">Let’s see where I have learned.</p>
+    
+  <div class="row justify-content-center g-4">
+    <!-- Experience Card 1 -->
+    <div class="col-md-6 col-lg-4">
+      <div class="card h-100 shadow-lg border-0 rounded-4 experience-card">
+        <div class="card-body">
+          <h5 class="card-title d-flex align-items-center gap-2">
+            <i class="bi bi-award-fill"></i> Digital Marketing Course
+          </h5>
+          <p class="mb-1"><strong>Organisation:</strong> 
+            <a href="https://zinmatt.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">Zinmatt</a>, Bihar
+          </p>
+          <p class="card-text text-secondary">
+            Graphic design, SEO, SMO, Meta Ads, Google Ads, Content Writing, Branding Strategy
+          </p>
+          <span class="badge bg-success">Completed</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Experience Card 2 -->
+    <!-- <div class="col-md-6 col-lg-4">
+      <div class="card h-100 shadow-lg border-0 rounded-4 experience-card">
+        <div class="card-body">
+          <h5 class="card-title d-flex align-items-center gap-2">
+            <i class="bi bi-award-fill"></i> Internship at Nestlé
+          </h5>
+          <p class="card-text text-secondary">
+            Completed a one-day internship and gained practical exposure in real-world branding and marketing strategy.
+          </p>
+          <span class="badge bg-success">Completed</span>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- Experience Card 3 -->
+    <!-- <div class="col-md-6 col-lg-4">
+      <div class="card h-100 shadow-lg border-0 rounded-4 experience-card">
+        <div class="card-body">
+          <h5 class="card-title d-flex align-items-center gap-2">
+            <i class="bi bi-lightbulb"></i> GSFRD Interview Host
+          </h5>
+          <p class="card-text text-secondary">
+            Organized and hosted an interview session, showcasing leadership and communication skills.
+          </p>
+          <span class="badge bg-warning text-dark">Volunteer</span>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- Add or Remove Cards Freely Below -->
+    <!-- Example:
+    <div class="col-md-6 col-lg-4">
+      <div class="card h-100 shadow-lg border-0 rounded-4 experience-card">
+        <div class="card-body">
+          <h5 class="card-title d-flex align-items-center gap-2">
+            <i class="bi bi-mortarboard"></i> Workshop on AI
+          </h5>
+          <p class="card-text text-secondary">Attended a workshop on artificial intelligence and its applications.</p>
+          <span class="badge bg-primary">Participated</span>
+        </div>
+      </div>
+    </div> -->
+   
+
+  </div>
+</section>
+
+
+    <!-- Optional: Add Bootstrap Icons and Animation Styles -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+      .experience-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+    
+      .experience-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 0 20px rgba(0, 123, 255, 0.2);
+      }
+    </style>
+
+    <!-- <section class="container mt-4">
+        <h4 class="text-center">My past experiences</h4>
+        <p class="text-secondary text-center">Let's see where I have worked.</p>
+
+        <div class="d-flex gap-3 justify-content-center">
+            <div class="card shadow" style="width: 18rem;">
+                <div class="card-body">
+                    <h4 class="card-title">Open Source Contributor</h4>
+                    <p class="card-text text-secondary">Contributing to open source projects</p>
+                    <span class="card-text text-secondary">Still learning</span>
+                </div>
+            </div>
+        </div>
+
+    </section> -->
+
+
+    <section class="container mt-4">
+        <!-- <h4 class="text-center">Let's wrap up quickly</h4> -->
+        <!-- <p class="text-secondary text-center">I am a proficient Full Stack MERN (MongoDB, Express, React, Node.js)
+            developer with extensive experience in creating dynamic, scalable, and user-centric web applications. They
+            possess a strong command over both front-end and back-end development, seamlessly integrating user
+            interfaces with server-side operations. Adept at developing responsive designs, they ensure optimal user
+            experience across all devices. Their expertise in database management with MongoDB enables them to structure
+            data efficiently, while their proficiency in Node.js and Express.js ensures robust server-side logic and API
+            development. They are committed to writing clean, maintainable code and adhere to industry best practices,
+            making them an asset in collaborative projects. With a keen eye for problem-solving, they enjoy staying
+            updated with emerging technologies, continuously refining their skills to deliver modern and effective
+            solutions.</p> -->
+    </section>
+
+  <footer>
+  <div class="container border p-5 rounded-top-5" id="contact">
+    <div>
+      <h4>Let's talk</h4>
+      <p class="">Have a question in mind? Feel free to reach out.</p>
+    </div>
+
+    <div>
+      <form id="contactForm">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email address</label>
+          <input
+            type="email"
+            name="email"
+            class="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+            placeholder="E.g. johndoe@mail.com"
+            required
+          >
+          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Enter a sweet message</label>
+          <textarea
+            name="message"
+            class="form-control"
+            id="exampleInputPassword1"
+            placeholder="E.g. Nice meeting you"
+            required
+          ></textarea>
+        </div>
+        <button type="submit" class="btn btn-success tilt-btn">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Link your script here -->
+  <script>
+    const scriptURL = "https://script.google.com/macros/s/AKfycbzkb4ims1IdXODVkQ0dgfqApX3xz1zSa04WwUhLi2uVGH0_LybrPywV6KvLtBhQgbPd/exec";
+    const form = document.getElementById("contactForm");
+
+    form.addEventListener("submit", e => {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+
+      fetch(scriptURL, {
+        method: "POST",
+        body: formData
+      })
+      .then(response => {
+        if (response.ok) {
+          alert("✅ Message submitted successfully!");
+          form.reset();
+        } else {
+          alert("❌ Submission failed (response not OK).");
+        }
+      })
+      .catch(error => {
+        console.error("❌ Error submitting form:", error);
+        alert("❌ Network error occurred.");
+      });
+    });
+  </script>
+</footer>
+
+
+    <footer class="footer-main">
+      <div class="container py-4">
+        <hr>
+        <div class="row align-items-center">
+          <div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
+            <p class="mb-0 text-secondary">
+              &copy; 2025 Souvik Dev &mdash; All rights reserved.
+            </p>
+          </div>
+        
+          <div class="col-md-6 text-center text-md-end">
+            <div class="d-flex gap-3 mt-3 mt-md-0 justify-content-center justify-content-md-end">
+              <a href="https://github.com/dasouvik122005" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" height="30" alt="GitHub">
+              </a>
+              <a href="https://www.linkedin.com/in/souvik-das-597a0b300/" target="_blank">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" height="30" alt="LinkedIn">
+              </a>
+              <a href="https://www.instagram.com/das_ouvik/?next=%2Fdas_ouvik%2F" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" height="30" alt="Instagram">
+              </a>
+              <a href="https://www.facebook.com/souvik.das.485515/" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" height="30" alt="Facebook">
+              </a>
+            
+            </div>
+          </div>
+      </div>
+    </footer>
+
+    <script>
+      const navbarCollapse = document.querySelector('.navbar-collapse');
+      const navbarToggler = document.querySelector('.navbar-toggler');
+      const navItemsToCollapse = document.querySelectorAll('.nav-link, .theme-toggle-btn');
+      
+      // Toggle navbar on hamburger click
+      navbarToggler.addEventListener('click', () => {
+        const bsCollapse = new bootstrap.Collapse(navbarCollapse, { toggle: false });
+        if (navbarCollapse.classList.contains('show')) {
+          bsCollapse.hide(); // If open, close it
+        } else {
+          bsCollapse.show(); // If closed, open it
+        }
+      });
+    
+      // Close on link or toggle button click inside navbar
+      navItemsToCollapse.forEach(item => {
+        item.addEventListener('click', () => {
+          if (navbarCollapse.classList.contains('show')) {
+            const bsCollapse = new bootstrap.Collapse(navbarCollapse, { toggle: false });
+            bsCollapse.hide();
+          }
+        });
+      });
+    
+      // Close if clicked outside
+      document.addEventListener('click', function (event) {
+        const isClickInside = navbarCollapse.contains(event.target) || navbarToggler.contains(event.target);
+        if (!isClickInside && navbarCollapse.classList.contains('show')) {
+          const bsCollapse = new bootstrap.Collapse(navbarCollapse, { toggle: false });
+          bsCollapse.hide();
+        }
+      });
+    
+      // Close on scroll
+      window.addEventListener('scroll', function () {
+        if (navbarCollapse.classList.contains('show')) {
+          const bsCollapse = new bootstrap.Collapse(navbarCollapse, { toggle: false });
+          bsCollapse.hide();
+        }
+      });
+    </script>
+    
+  </body>
+</html>

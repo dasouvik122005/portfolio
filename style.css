@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #54c085;
+  --secondary-color: #eef6f8;
+}
+
+body {
+  background-color: #ffffff;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+nav {
+  border: 0.5px solid rgb(201, 199, 199);
+  background-color: var(--secondary-color);
+}
+nav ul li:hover {
+  text-decoration: underline;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+#footer {
+  backdrop-filter: blur(10px) brightness(90%);
+}
+
+#contact {
+  /* Add a soft shadow and background for the footer form */
+  box-shadow: 0 4px 32px 0 rgba(44, 62, 80, 0.15);
+  background: #f8fafc;
+}
+
