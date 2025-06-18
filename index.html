@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Souvik Das, a front-end web developer.">
+    <meta name="keywords" content="Souvik Das, portfolio, web developer, front-end, JavaScript, HTML, CSS">
+    <meta name="author" content="Souvik Das">
+    
+    <title>Souvik Dev</title>
+    <link rel="icon" type="image/png" href="souvik.jpg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" 
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" 
+        referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
+
+
+    <script src="script.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"
+        defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js" defer></script>
+
+</head>
+
+<button id="scrollToTopBtn" title="Go to top">
+  <img src="up-arrow.png" alt="Scroll to Top">
+</button>
+
+
+
+<body>
+    <!-- loading... -->
+
+    <div id="loading-overlay">
+        <div class="spinner"></div>
+        <p>Loading Portfolio...</p>
+    </div> 
+
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg bg-white">
+        <div class="container">
+            <a class="navbar-brand" href="#">Souvik Dev</a>
+
+            <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <div class="hamburger-lines">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto d-flex align-items-center gap-3">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#education">Education</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <button id="theme-toggle" class="theme-toggle-btn">🌙 Dark Mode</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="upper-section">
+        <div class="container pb-5 hero-section" style="margin-top: 100px;">
+            <div class="row align-items-center flex-column flex-lg-row g-5">
+                <div class="col-12 col-lg-auto d-flex flex-column align-items-center">
+                    <div class="hero-img-wrapper">
+                        <img src="souvik.jpg" class="hero-img" alt="Portrait of Souvik Das">
+                    </div>
+                </div>
+
+                <div class="col text-center text-lg-start">
+                    <h1 class="hero-heading mb-3 animate-typing">
+                        Hi, I'm Souvik Das <i class="fas fa-robot me-3"></i>
+                    </h1>
+                    <span class="fs-5 text-secondary d-block">I am a front-end Web Developer.</span>
+                    <span class="fs-5 text-secondary d-block">I will help you to build your next project in a short time.</span>
+                    <span class="fs-5 text-secondary d-block">Let's make your project stand out from others.</span>
+                    <div class="d-flex justify-content-center justify-content-lg-start gap-3 mt-3">
+                        <div><a href="souvik_das_resume.pdf" target="_blank" 
+                            class="your-button-class btn btn-outline-success me-2 flex-grow-1 button-with-icon">
+                                <i class="fas fa-file-alt me-1"></i> View Resume
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="container mt-4">
+        <h4 class="text-center">Skills speak louder than certificates.</h4>
+        <p class="text-secondary text-center">Skills that I have obtained through my journey of programming.</p>
+
+        <div class="card p-5 mt-3 shadow">
+            <p class="mb-3 text-center fs-5">
+                <b><i class="fas fa-tools me-2"></i> Tech Stack/ Certifications</b>
+            </p>
+            <div class="d-flex gap-1 justify-content-center flex-wrap">
+
+                <img src="https://img.shields.io/badge/-C-00599C?logo=c&logoColor=white&style=flat" height="30" alt="C">&nbsp;
+                <img src="https://img.shields.io/badge/-HTML5-DE5934?logo=HTML5&logoColor=white&style=flat" height="30" alt="HTML5">&nbsp;
+                <img src="https://img.shields.io/badge/-CSS3-2275B2?logo=CSS3&logoColor=white&style=flat"
+                    height="30" alt="CSS3">&nbsp;
+                <img src="https://img.shields.io/badge/-JavaScript-F7DF1E?logo=javascript&logoColor=black&style=flat"
+                    height="30" alt="JavaScript">&nbsp;
+                <img src="https://img.shields.io/badge/-Git-orange?logo=Git&logoColor=white&style=flat" height="30" alt="Git">&nbsp;
+                <img src="https://img.shields.io/badge/-GitHub-181717?logo=github&logoColor=white&style=flat"
+                    height="30" alt="GitHub">&nbsp;
+                <img src="https://img.shields.io/badge/-Visual%20Studio%20Code-25AEF4?logo=visualstudio&logoColor=white&style=flat"
+                    height="30" alt="VS Code">&nbsp;
+                <img src="https://img.shields.io/badge/-Windows-0F7BCF?logo=Windows&logoColor=white&style=flat"
+                    height="30" alt="Windows">&nbsp;
+
+            </div> 
+            
+            <br>
+
+
+            <p class="mb-2 text-center fs-5">
+                <b><i class="fab fa-github me-2"></i> GitHub Activity</b>
+            </p>
+            <div class="github-stats-wrapper">
+              <div class="github-card">
+                <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=dasouvik122005&theme=aura&hide_border=false&include_all_commits=false&count_private=false&layout=compact&bg_color=00000000"
+                  alt="Top Languages" />
+              </div>
+              <div class="github-card">
+                <img src="https://github-readme-stats.vercel.app/api?username=dasouvik122005&theme=default&hide_border=false&include_all_commits=false&count_private=false&bg_color=00000000&text_color=2F4F4F"
+                  alt="GitHub Stats" />
+              </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container my-5" id="projects">
+        <h4 class="text-center fw-bold mb-1" data-aos="fade-up">
+            <b><i class="fas fa-folder-open me-2"></i> The Projects I Have Built</b>
+        </h4>
+        <p class="text-secondary text-center mb-4" data-aos="fade-up" data-aos-delay="150">
+            These are some close-to-heart projects. See more on
+            <a href="https://github.com/dasouvik122005" class="fw-semibold github-link text-decoration-none" target="_blank">
+                GitHub
+            </a>.
+        </p>
+        <div class="row g-4 justify-content-center">
+
+            <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="200">
+                <div class="card shadow-sm border-0 rounded-4 h-100 project-card">
+                    <div class="overflow-hidden rounded-top-4">
+                        <div>
+                            <img src="smart_att_tracker.png" class="card-img-top img-hover" alt="Smart Attendance Tracker">
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Smart Attendance Tracker</h5>
+                        <p class="card-text text-secondary small">An application to track student attendance.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <a href="https://dasouvik122005.github.io/Smart_Attendance_Tracker/" target="_blank" class="btn btn-outline-primary me-2 flex-grow-1 button-with-icon">
+                                <i class="fas fa-external-link-alt me-1"></i> Live Demo
+                            </a>
+                            <a href="https://github.com/dasouvik122005/Smart_Attendance_Tracker" target="_blank" class="btn btn-outline-secondary flex-grow-1 button-with-icon">
+                                <i class="fab fa-github me-1"></i> View Repo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="200">
+                <div class="card shadow-sm border-0 rounded-4 h-100 project-card">
+                    <div class="overflow-hidden rounded-top-4">
+                        <div>
+                            <img src="notes_nexus.png" class="card-img-top img-hover" alt="Notes Nexus">
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Notes Nexus</h5>
+                        <p class="card-text text-secondary small">A note-taking application for students.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <a href="https://dasouvik122005.github.io/Notes_Nexus/" target="_blank" class="btn btn-outline-primary me-2 flex-grow-1 button-with-icon">
+                                <i class="fas fa-external-link-alt me-1"></i> Live Demo
+                            </a>
+                            <a href="https://github.com/dasouvik122005/Notes_Nexus" target="_blank" class="btn btn-outline-secondary flex-grow-1 button-with-icon">
+                                <i class="fab fa-github me-1"></i> View Repo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="200">
+                <div class="card shadow-sm border-0 rounded-4 h-100 project-card">
+                    <div class="overflow-hidden rounded-top-4">
+                            <div>
+                                <img src="eco_cart_india.png" class="card-img-top img-hover" alt="Eco Cart India">
+                            </div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Eco Cart India</h5>
+                        <p class="card-text text-secondary small">A Carbon footprint Generator application.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <a href="https://dasouvik122005.github.io/Carbon_footprint_generator/" target="_blank" class="btn btn-outline-primary me-2 flex-grow-1 button-with-icon">
+                                <i class="fas fa-external-link-alt me-1"></i> Live Demo
+                            </a>
+                            <a href="https://github.com/dasouvik122005/Carbon_footprint_generator" target="_blank" class="btn btn-outline-secondary flex-grow-1 button-with-icon">
+                                <i class="fab fa-github me-1"></i> View Repo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="200">
+                <div class="card shadow-sm border-0 rounded-4 h-100 project-card">
+                    <div class="overflow-hidden rounded-top-4">
+                        <div><img src="to_do_list.png" class="card-img-top img-hover" alt="To-do List"></div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">To-do List</h5>
+                        <p class="card-text text-secondary small">A simple to-do list application.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <a href="https://dasouvik122005.github.io/To-do-list/" target="_blank" class="btn btn-outline-primary me-2 flex-grow-1 button-with-icon">
+                                <i class="fas fa-external-link-alt me-1"></i> Live Demo
+                            </a>
+                            <a href="https://github.com/dasouvik122005/To-do-list" target="_blank" class="btn btn-outline-secondary flex-grow-1 button-with-icon">
+                                <i class="fab fa-github me-1"></i> View Repo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="container mt-4">
+        <h4 id="education" class="text-center">
+            <b><i class="fas fa-book me-2"></i> My Educational Journey</b>
+        </h4>
+    </section>
+
+    <div class="timeline-container">
+        <div class="timeline-item">
+            <div class="timeline-icon">
+                <img src="jisulogo.png" width="30" alt="JIS Logo">
+            </div>
+            <div class="timeline-content">
+                <div class="timeline-date"></div>
+                <h5><i class="fas fa-university me-2"></i>JIS University, Kolkata</h5>
+                <p>B.Tech in CSE</p>
+                <p>📅 Duration: 2024 – 2028</p>
+                <p>🎯 Semester: 2nd</p>
+                <p>📋 SGPA: 9.43</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-icon">
+                <img src="bbvlogo.jpg" width="30" alt="GDSC Logo">
+            </div>
+            <div class="timeline-content">
+                <div class="timeline-date"></div>
+                <h5><i class="fas fa-school me-2"></i>Bankura Banga Vidyalaya</h5>
+                <p>Class 12 (WBCHSE)</p>
+                <p>📅 Year: 2024</p>
+                <p>🎯 Grade: 91.2%</p>
+                <p>📚 Stream: Science</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-icon">
+                <img src="fhslogo.jpg" width="30" alt="Company Logo">
+            </div>
+            <div class="timeline-content">
+                <div class="timeline-date"></div>                
+                <h5><i class="fas fa-school me-2"></i>Fulkushma High School</h5>
+                <p>Class 10 (WBBSE)</p>
+                <p>📅 Year: 2022</p>
+                <p>🎯 Grade: 92.57%</p>
+            </div>
+        </div>
+    </div>
+
+    <section class="container mt-5 mb-5">
+        <h4 class="text-center fw-bold mb-1">
+            <i class="fas fa-chalkboard-teacher me-2"></i> Course, Internship & Workshops
+        </h4>
+        <p class="text-secondary text-center mb-4">Let’s see where I have learned.</p>
+
+        <div class="row justify-content-center g-4">
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-lg border-1 rounded-4 experience-card">
+                    <div class="card-body">
+                        <h5 class="card-title d-flex align-items-center gap-2">
+                            <i class="bi bi-award-fill"></i> Digital Marketing Course
+                        </h5>
+                        <p class="mb-1"><strong>Organisation:</strong>
+                            <a href="https://zinmatt.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">Zinmatt</a>, Bihar
+                        </p>
+                        <p class="card-text text-secondary">
+                            Graphic design, SEO, SMO, Meta Ads, Google Ads, Content Writing, Branding Strategy
+                        </p>
+                        <span class="badge bg-success">Completed</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+    </section>
+
+    <footer>
+        <div class="container border p-5 rounded-top-5" id="contact">
+            <div>
+                <div>
+                    <i class="fas fa-comment-dots me-1"></i> Let's Talk
+                </div>
+                <p class="">Have a question in mind? Feel free to reach out.</p>
+            </div>
+
+            <div>
+                <form id="contactForm">
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Email address</label>
+                        <input type="email" name="email" class="form-control" id="exampleInputEmail1"
+                            aria-describedby="emailHelp" placeholder="E.g. abc@gmail.com" required>
+                        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Enter your message</label>
+                        <textarea name="message" class="form-control" id="exampleInputPassword1"
+                            placeholder="Write here" required></textarea>
+                    </div>
+                                    
+                    <button type="submit" class="your-button-class btn btn-outline-success me-2 flex-grow-1 button-with-icon ">
+                        <i class="fas fa-paper-plane me-1"></i> <span class="dark-mode-text">Submit</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </footer>
+
+    <footer class="footer-main">
+        <div class="container py-4">
+            <hr>
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
+                    <p class="mb-0 text-secondary">
+                        &copy; 2025 Souvik Dev &mdash; All rights reserved.
+                    </p>
+                </div>
+
+                <div class="col-md-6 text-center text-md-end">
+                    <div class="d-flex gap-3 mt-3 mt-md-0 justify-content-center justify-content-md-end">
+                        <a href="https://github.com/dasouvik122005" target="_blank">
+                            <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" height="30" alt="GitHub">
+                        </a>
+                        <a href="https://www.linkedin.com/in/souvik-das-597a0b300/" target="_blank">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg"
+                                height="30" alt="LinkedIn">
+                        </a>
+                        <a href="https://www.instagram.com/das_ouvik/?next=%2Fdas_ouvik%2F" target="_blank">
+                            <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" height="30" alt="Instagram">
+                        </a>
+                        <a href="https://www.facebook.com/souvik.das.485515/" target="_blank">
+                            <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" height="30" alt="Facebook">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

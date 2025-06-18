@@ -1,0 +1,700 @@
+html {
+  scroll-behavior: smooth;
+}
+
+
+
+/* Global Reset and Box Sizing for Responsiveness */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Crucial for preventing horizontal overflow */
+}
+
+/* Add overflow-x: hidden to html to prevent horizontal scrolling */
+html {
+  overflow-x: hidden;
+}
+
+/* Root variables for colors */
+:root {
+  --primary-color: #54c085;
+  --secondary-color: #eef6f8;
+}
+.nav-link{
+  color: #000;
+}
+
+
+body {
+  background-color: #ffffff;
+  color: #000;
+  font-family: 'Inter', sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+  overflow-x: hidden; /* Prevents horizontal scrollbar */
+  padding-top: 60px; /* Adjust this value (e.g., 60px) to be slightly more than your navbar's height */
+}
+
+/* Navbar Styles */
+.navbar {
+  position: fixed !important;
+  top: 8px; /* Moved slightly downward from 0 to 8px */
+  left: 50%; /* Centers the fixed navbar horizontally */
+  transform: translateX(-50%); /* Adjusts for perfect horizontal centering */
+  width: calc(100% - 3rem); /* Adjust width to maintain previous side spacing if desired (1.5rem on each side) */
+  max-width: 900px; /* Keeps the max-width as before */
+  z-index: 1030; /* Ensures it stays above other content */
+  background-color: transparent !important;
+  background: blur(8px) rgba(0, 0, 0, 0.1) !important; /* Ensure dark mode has a blurred background */
+  color: #fff !important; /* Ensure text is visible in dark mode */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2) !important; /* Darker shadow for dark mode */
+  backdrop-filter: blur(8px) !important; /* Ensure dark mode has a blurred background */
+  border-color: #bfb7b7 !important; /* Ensure border is visible in dark mode */
+  border: 1px solid rgba(0, 0, 0, 0.1); /* Subtle border for visibility */
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  padding: 0.25rem 0.5rem;
+  margin: 0; /* Margins are ignored by fixed positioning, so set to 0 */
+  min-height: 40px;
+  transition: background-color 0.3s;
+  will-change: transform; /* Hint to the browser for better rendering performance */
+}
+
+.navbar ul li:hover {
+  scale: 1.05; /* Slightly enlarge on hover */
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+@media (max-width: 991.98px) {
+  .navbar {
+    border-radius: 3rem;
+    padding: 0.25rem 0.25rem;
+    width: calc(100% - 2rem); /* Keep spacing on smaller screens */
+    /* left: 0; */ /* REMOVE THIS LINE */
+    /* transform: none; */ /* REMOVE THIS LINE */
+  }
+  body {
+    padding-top: 50px;
+  }
+}
+
+/* Dark mode specific for fixed position: */
+body.dark-mode .navbar {
+  background-color: transparent !important;
+  background: blur(8px) rgba(0, 0, 0, 0.1) !important; /* Ensure dark mode has a blurred background */
+  color: #fff !important; /* Ensure text is visible in dark mode */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2) !important; /* Darker shadow for dark mode */
+  backdrop-filter: blur(8px) !important; /* Ensure dark mode has a blurred background */
+  border-color: #444 !important; /* Ensure border is visible in dark mode */
+}
+
+/* Custom Hamburger Icon Styles */
+.navbar-toggler {
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0.25rem 0.75rem;
+  width: 45px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hamburger-lines {
+    width: 25px;
+    height: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+
+.hamburger-lines span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background: #333;
+    border-radius: 3px;
+    position: absolute;
+    left: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.hamburger-lines span:nth-child(1) {
+    top: 0px;
+}
+.hamburger-lines span:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%);
+}
+.hamburger-lines span:nth-child(3) {
+    bottom: 0px;
+}
+
+/* Transform to Cross when Navbar is NOT collapsed (i.e., open) */
+.navbar-toggler:not(.collapsed) .hamburger-lines span:nth-child(1) {
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+}
+.navbar-toggler:not(.collapsed) .hamburger-lines span:nth-child(2) {
+    opacity: 0;
+}
+.navbar-toggler:not(.collapsed) .hamburger-lines span:nth-child(3) {
+    bottom: 50%;
+    transform: translateY(50%) rotate(-45deg);
+}
+
+/* Dark mode toggle button styles */
+.theme-toggle-btn {
+  border: none; /* Removed border */
+  outline: none; /* Good practice for buttons */
+  background-color: transparent; /* Default transparent background */
+  padding: .375rem .75rem; /* Standard button padding */
+  border-radius: .25rem; /* Standard button border-radius */
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  color: #000; /* Default text color in light mode */
+}
+
+
+/* Dark mode styles */
+body.dark-mode {
+  background-color: #121212;
+  color: #f1f1f1;
+}
+
+body.dark-mode .nav-link,
+body.dark-mode .navbar-brand {
+  color: #ffffff !important;
+}
+
+body.dark-mode .theme-toggle-btn {
+  color: #fff;
+  background-color: transparent; /* Keep it transparent in dark mode */
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6,
+body.dark-mode p,
+body.dark-mode span,
+body.dark-mode a,
+body.dark-mode li,
+body.dark-mode label,
+body.dark-mode .card-text,
+body.dark-mode .timeline-content,
+body.dark-mode .timeline-content h4,
+body.dark-mode .timeline-content h5,
+body.dark-mode .timeline-content p,
+body.dark-mode .text-secondary,
+body.dark-mode .form-label,
+body.dark-mode .form-text {
+  color: #fff !important;
+}
+
+body.dark-mode .card,
+body.dark-mode .timeline-container,
+body.dark-mode .footer-main,
+body.dark-mode .border {
+  background-color: transparent !important;
+  color: #fff !important;
+  border-color: #444 !important;
+}
+
+body.dark-mode .timeline-icon {
+    background-color: #1f1f1f;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode input,
+body.dark-mode textarea {
+  background-color: #181818 !important;
+  color: #fff !important;
+  border-color: #444 !important;
+}
+
+body.dark-mode .btn-success {
+  background-color: #388e3c !important;
+  border-color: #388e3c !important;
+  color: #fff !important;
+}
+
+/* Change placeholder text color in dark mode */
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder {
+  color: #bbbbbb !important;
+  opacity: 1 !important;
+}
+
+/* Change hamburger lines color in dark mode */
+body.dark-mode .hamburger-lines span {
+    background: #fff;
+}
+
+/* Hero Section Image */
+.hero-img {
+  width: 200px;
+  height: auto;
+  max-width: 100%;
+  box-shadow: 0 24px 64px 0 rgba(80, 180, 255, 0.45);
+}
+
+/* Typing Animation */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+.animate-typing {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 0;
+  animation: typing 3s steps(20, end) forwards;
+  font-size: 2.2rem;
+  max-width: 100%;
+}
+@media (max-width: 576px) {
+  .animate-typing {
+    font-size: 1.5rem;
+    white-space: normal;
+    overflow: visible;
+    width: auto;
+  }
+}
+
+/* Project Card Image Hover & Title */
+.img-hover {
+  transition: transform 0.5s ease;
+}
+
+.img-hover:hover {
+  transform: scale(1.05);
+}
+
+.card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* GitHub Stats Images */
+  .github-stats-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .github-card {
+    flex: 1 1 300px;
+    max-width: 500px;
+    min-width: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #00000044;
+  }
+
+  .github-card img {
+    width: 100%;
+    height: auto;
+  }
+
+  @media (max-width: 768px) {
+    .github-card {
+      max-width: 100%;
+    }
+  }
+
+/* Timeline Styles */
+.timeline-container {
+  position: relative;
+  padding: 50px 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.timeline-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 40px; /* Desktop position */
+  bottom: 0;
+  width: 2px;
+  background: #888;
+}
+
+.timeline-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.timeline-icon {
+  background-color: #fff;
+  border-radius: 50%;
+  padding: 5px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px; /* For desktop spacing */
+  z-index: 1;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-content {
+  padding-left: 20px; /* For desktop spacing */
+  max-width: calc(100% - 60px);
+}
+
+.timeline-content h4,
+.timeline-content h5,
+.timeline-content p {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #000000;
+}
+
+.timeline-date {
+  font-size: 0.9rem;
+  color: #070000;
+}
+
+/* Corrected media query for timeline responsiveness */
+@media (max-width: 768px) {
+  .timeline-container::before {
+    left: 40px; /* Line position for mobile */
+  }
+  .timeline-item {
+    flex-direction: column; /* Stack icon above content */
+    align-items: flex-start; /* Align icon and content to the left */
+    padding-left: 60px; /* Indent the entire item to make space for the line and icon */
+    position: relative; /* Essential for absolute positioning of the icon */
+  }
+  .timeline-icon {
+    position: absolute; /* Take the icon out of the normal flow */
+    left: 20px; /* Position the icon relative to the line (20px from container) */
+    transform: translateX(-50%); /* Pull icon left by half its width to center it on the line */
+    top: 0; /* Align with the top of the timeline item's content */
+    margin-bottom: 0; /* Remove previous margin */
+    margin-right: 0; /* Remove previous margin */
+  }
+  .timeline-content {
+    padding-left: 0; /* Remove specific padding here as item has padding-left */
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+
+/* Experience Card Hover & Footer Styles */
+.experience-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 20px rgba(0, 123, 255, 0.2);
+}
+
+/* Footer Specific Styles */
+#contact {
+  box-shadow: 0 4px 32px 0 rgba(44, 62, 80, 0.15);
+  background: #f8fafc;
+}
+
+/* Dark mode overrides for footer and input fields */
+body.dark-mode #contact {
+    background: transparent !important;
+}
+
+body.dark-mode input,
+body.dark-mode textarea {
+  background-color: #181818 !important;
+  color: #fff !important;
+  border-color: #444 !important;
+}
+
+body.dark-mode .btn-success {
+  background-color: #388e3c !important;
+  border-color: #388e3c !important;
+  color: #fff !important;
+}
+
+/* Change placeholder text color in dark mode */
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder {
+  color: #bbbbbb !important;
+  opacity: 1 !important;
+}
+
+/* Hero Section Styles */
+.hero-heading {
+  white-space: nowrap;      /* Prevent breaking */
+  overflow: hidden;         /* Hide overflow */
+  text-overflow: ellipsis;  /* Optional: show ... if it overflows */
+  font-size: 2.5rem;         /* Adjust based on design */
+  text-overflow: ellipsis;
+}
+@media (max-width: 480px) {
+  .hero-heading {
+    font-size: 1.6rem;       /* Smaller for mobile */
+  }
+}
+
+
+
+
+
+
+
+/* Scroll to Top Button Styles */
+
+#scrollToTopBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 25px;
+  background: none !important;
+  border: none !important;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  display: none;
+  z-index: 999;
+  outline: none;
+}
+
+#scrollToTopBtn img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  pointer-events: none; /* ensures only button handles interaction */
+}
+
+/* Prevent unwanted active/hover styles */
+#scrollToTopBtn:focus,
+#scrollToTopBtn:active,
+#scrollToTopBtn:hover {
+  background: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+#scrollToTopBtn:focus,
+#scrollToTopBtn:active {
+  background: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+#scrollToTopBtn {
+  -webkit-tap-highlight-color: transparent;
+}
+
+#scrollToTopBtn,
+#scrollToTopBtn img {
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+#scrollToTopBtn:focus,
+#scrollToTopBtn:active,
+#scrollToTopBtn:hover {
+  background: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+#education, #projects, #contact {
+  scroll-margin-top: 100px;
+}
+
+
+
+
+
+/* Custom Hover Effect (subtle scale) */
+.btn:hover {
+    transform: translateY(-2px); /* Lifts the button slightly */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+    transition: all 0.2s ease-in-out; /* Smooth transition for all properties */
+}
+
+/* For outline buttons specifically, to prevent background jump on hover for secondary */
+.btn-outline-secondary:hover {
+    background-color: #2e353b; /* Bootstrap secondary color */
+    color: #fff; /* White text on hover */
+}
+
+/* For outline buttons specifically, to prevent background jump on hover for primary */
+.btn-outline-primary:hover {
+    background-color: #0d6efd; /* Bootstrap primary color */
+    color: #fff; /* White text on hover */
+}
+
+
+/* Custom button style for consistent icon spacing (optional) */
+.button-with-icon i {
+    vertical-align: middle; /* Aligns icon with text */
+    font-size: 0.9em; /* Slightly smaller icon relative to text */
+}
+
+/* Example of a custom button color if not using Bootstrap defaults */
+.btn-custom-teal {
+    background-color: #20c997; /* Teal */
+    border-color: #20c997;
+    color: #fff;
+}
+.btn-custom-teal:hover {
+    background-color: #1a9c78; /* Darker teal on hover */
+    border-color: #1a9c78;
+}
+
+/* GitHub Link Styles */
+
+.github-link {
+    color: #6e5494; /* GitHub's brand purple */
+    transition: color 0.3s ease; /* Smooth transition on hover */
+}
+
+.github-link:hover {
+    color: #8a6bc9; /* Slightly lighter on hover */
+    /* You could also add a subtle text-shadow or underline effect here */
+}
+
+/* Loading Overlay Styles */
+#loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff; /* White background for light mode */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Ensure it's on top of everything */
+    transition: opacity 0.5s ease-out; /* Smooth transition for hiding */
+}
+
+/* Dark mode for loading overlay */
+body.dark-mode #loading-overlay {
+    background-color: #121212; /* Dark background for dark mode */
+}
+
+/* Spinner Animation */
+.spinner {
+    border: 8px solid #f3f3f3; /* Light grey */
+    border-top: 8px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 2s linear infinite;
+    margin-bottom: 15px;
+}
+
+/* Dark mode spinner color */
+body.dark-mode .spinner {
+    border: 8px solid #444; /* Darker grey */
+    border-top: 8px solid #54c085; /* Using your primary color for the spinner in dark mode */
+}
+
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#loading-overlay p {
+    font-size: 1.2em;
+    color: #333; /* Text color for light mode */
+    transition: opacity 0.5s ease-out, visibility 0.5s;
+}
+
+body.dark-mode #loading-overlay p {
+    color: #f1f1f1; /* Text color for dark mode */
+}
+
+/* Hide the overlay (used by JavaScript) */
+#loading-overlay.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none; /* Allows clicks to pass through once hidden */
+}
+
+h1, h2, h3, h4, h5, h6, .btn {
+  font-family: 'Inter', sans-serif;
+}
+
+.hero-img-wrapper {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #54c085, #20c997, #0d6efd);
+  padding: 2px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+.hero-img-wrapper:hover {
+  transform: scale(1.05);
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 24px 64px rgba(80, 180, 255, 0.3);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+body.dark-mode .hero-img-wrapper {
+  background: linear-gradient(135deg, #20c997, #388e3c, #0d6efd);
+  box-shadow: 0 12px 24px rgba(255, 255, 255, 0.1);
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+
+.hero-img-wrapper {
+  animation: float 5s ease-in-out infinite;
+}
+
+.live-image-wrapper {
+  position: absolute;
+  right: -60px;
+  top: 20px;
+  width: 120px;
+  animation: floatUpDown 6s ease-in-out infinite;
+}
+
+.live-floating-img {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.2));
+}
+
+/* Floating animation */
+@keyframes floatUpDown {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0); }
+}
+
+
