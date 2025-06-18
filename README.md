@@ -1,6 +1,6 @@
 # Souvik Das - Portfolio
 
-Welcome to my corner of the internet! This repository hosts the code for my personal portfolio website, where I showcase my projects, skills, and experience.
+Welcome to my corner of the internet! This repository hosts the code for my portfolio website, where I showcase my projects, skills, and experience.
 
 ---
 
@@ -45,7 +45,7 @@ I'm always open to new opportunities and collaborations! Feel free to connect wi
 
 * **LinkedIn:** [**https://www.linkedin.com/in/souvik-das-22b0a3250/**](https://www.linkedin.com/in/souvik-das-22b0a3250/)
 * **GitHub:** [**https://github.com/dasouvik122005**](https://github.com/dasouvik122005)
-* **Email:** [**your.email@example.com**](mailto:your.email@example.com) (Remember to replace this with your actual email address!)
+* **Email:** [**dasouvik122005@gmail.com**](dasouvik122005@gmail.com)
 
 ---
 
