@@ -6,7 +6,7 @@ Welcome to my corner of the internet! This repository hosts the code for my pers
 
 ## About Me
 
-I'm Souvik Das, a passionate and driven **Frontend Web Developer** with a strong interest in **building scalable web applications** and **exploring machine learning algorithms**. I love turning ideas into reality through code and am constantly learning and exploring new technologies.
+I'm Souvik Das, a passionate and driven **Frontend Web Developer** with a strong interest in **building scalable web applications**. I love turning ideas into reality through code and am constantly learning and exploring new technologies.
 
 ---
 
