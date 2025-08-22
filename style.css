@@ -406,6 +406,254 @@ body.dark-mode .hamburger-lines span {
   box-shadow: 0 0 20px rgba(0, 123, 255, 0.2);
 }
 
+/* Certificates Section - Scrollable Cards */
+.experience-grid {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  gap: 1.5rem;
+  padding: 1rem 0;
+  scrollbar-width: thin;
+  scrollbar-color: #54c085 #eaeaea;
+}
+
+/* Chrome / Safari custom scrollbar */
+.experience-grid::-webkit-scrollbar {
+  height: 8px;
+}
+.experience-grid::-webkit-scrollbar-track {
+  background: #eaeaea;
+  border-radius: 10px;
+}
+.experience-grid::-webkit-scrollbar-thumb {
+  background: #54c085;
+  border-radius: 10px;
+}
+
+/* Card sizing */
+.experience-grid .col-card {
+  flex: 0 0 auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Mobile: show 1 card at a time */
+@media (max-width: 767px) {
+  .experience-grid .col-card {
+    width: 90%;
+    max-width: 90%;
+  }
+}
+
+/* Tablet: show 2 cards */
+@media (min-width: 768px) and (max-width: 991px) {
+  .experience-grid .col-card {
+    width: 45%;
+    max-width: 45%;
+  }
+}
+
+/* Desktop: show 4 cards */
+@media (min-width: 992px) {
+  .experience-grid .col-card {
+    width: 23%;
+    max-width: 23%;
+  }
+}
+
+/* Card Styling - more premium look */
+.experience-card {
+  border-radius: 1rem;
+  border: 1px solid #e0e0e0;
+  background: #fff;
+  transition: all 0.35s ease;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+}
+
+.experience-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Title Styling */
+.experience-card .card-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #222;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Badge */
+.badge.bg-success {
+  background: linear-gradient(135deg, #28a745, #20c997);
+  font-weight: 600;
+  padding: 0.4em 0.7em;
+  border-radius: 0.75rem;
+}
+
+/* Premium Certificate Scroll Section */
+.experience-grid {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  gap: 1.5rem;
+  padding: 1rem 0;
+}
+
+/* Snap cards into place */
+.experience-grid .col-card {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+}
+
+/* Mobile: 1 card */
+@media (max-width: 767px) {
+  .experience-grid .col-card {
+    width: 90%;
+  }
+}
+
+/* Tablet: 2 cards */
+@media (min-width: 768px) and (max-width: 991px) {
+  .experience-grid .col-card {
+    width: 45%;
+  }
+}
+
+/* Desktop: 4 cards */
+@media (min-width: 992px) {
+  .experience-grid .col-card {
+    width: 23%;
+  }
+}
+
+/* Premium Card Style with Bend */
+.experience-card {
+  border: 2px solid transparent;
+  background: linear-gradient(white, white) padding-box,
+              linear-gradient(135deg, #54c085, #0d6efd) border-box;
+  border-radius: 1rem;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+  transform: perspective(1000px) rotateY(-4deg);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.experience-card:hover {
+  transform: perspective(1000px) rotateY(0deg) translateY(-6px) scale(1.03);
+  box-shadow: 0 16px 28px rgba(0, 0, 0, 0.2);
+}
+
+/* Title Styling */
+.experience-card .card-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #222;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ===== Certificates Section (Light + Dark Mode) ===== */
+
+/* Premium Certificate Scroll Section */
+.experience-grid {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  gap: 1.5rem;
+  padding: 1rem 0;
+}
+
+/* Snap cards into place */
+.experience-grid .col-card {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+}
+
+/* Mobile: 1 card */
+@media (max-width: 767px) {
+  .experience-grid .col-card {
+    width: 90%;
+  }
+}
+
+/* Tablet: 2 cards */
+@media (min-width: 768px) and (max-width: 991px) {
+  .experience-grid .col-card {
+    width: 45%;
+  }
+}
+
+/* Desktop: 4 cards */
+@media (min-width: 992px) {
+  .experience-grid .col-card {
+    width: 23%;
+  }
+}
+
+/* Premium Card Style (Light Mode) */
+.experience-card {
+  border: 2px solid transparent;
+  background: linear-gradient(#ffffff, #ffffff) padding-box,
+              linear-gradient(135deg, #54c085, #0d6efd) border-box;
+  border-radius: 1rem;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+  transform: perspective(1000px) rotateY(-4deg);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.experience-card:hover {
+  transform: perspective(1000px) rotateY(0deg) translateY(-6px) scale(1.03);
+  box-shadow: 0 16px 28px rgba(0, 0, 0, 0.2);
+}
+
+/* Title Styling */
+.experience-card .card-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #222;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ===== DARK MODE STYLES ===== */
+body.dark-mode .experience-card {
+  border: 2px solid transparent;
+  background: linear-gradient(#1c1c1c, #1c1c1c) padding-box,
+              linear-gradient(135deg, #54c085, #0d6efd) border-box;
+  color: #fff;
+  box-shadow: 0 6px 12px rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .experience-card:hover {
+  transform: perspective(1000px) rotateY(0deg) translateY(-6px) scale(1.03);
+  box-shadow: 0 16px 28px rgba(84, 192, 133, 0.3);
+}
+
+body.dark-mode .experience-card .card-title {
+  color: #fff;
+}
+
+body.dark-mode .experience-card .card-text {
+  color: #ddd !important;
+}
+
+body.dark-mode .badge.bg-success {
+  background: linear-gradient(135deg, #28a745, #20c997);
+  color: #fff;
+}
+
+
 /* Footer Specific Styles */
 #contact {
   box-shadow: 0 4px 32px 0 rgba(44, 62, 80, 0.15);
@@ -450,12 +698,6 @@ body.dark-mode textarea::placeholder {
     font-size: 1.6rem;       /* Smaller for mobile */
   }
 }
-
-
-
-
-
-
 
 /* Scroll to Top Button Styles */
 
@@ -698,3 +940,40 @@ body.dark-mode .hero-img-wrapper {
 }
 
 
+/* Project Card Styling */
+.project-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15) !important;
+}
+
+.card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* Button Styling for consistency */
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+    border-color: #545b62;
+}
